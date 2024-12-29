@@ -52,8 +52,7 @@ def traverse_grid(grid, row, col):
             continue
         else:
             left, right = get_next_location(grid, row, col)
-            bool_res = traverse_grid(grid, left, right)
-            if not bool_res:
+            if not traverse_grid(grid, left, right):
                 grid[row][col] = 0
                 continue
             else:
